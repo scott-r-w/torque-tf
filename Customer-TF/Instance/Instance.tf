@@ -2,6 +2,10 @@
 data "aws_ami" "ubuntu" {
   most_recent = true
 
+  variable "aws_region" {
+  type    = string
+  default = "us-west-2"
+}
   filter {
     name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
